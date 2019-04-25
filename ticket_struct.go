@@ -25,7 +25,7 @@ type Ticket struct {
 	DueAt               string `json:"due_at,omitempty"`
 	Tags                []string `json:"tags,omitempty"`
 	Via                 *Via `json:"via,omitempty"`
-	CustomFields        []string `json:"custom_fields,omitempty"`
+    CustomFields        []CustomField `json:"custom_fields,omitempty"`
 	SatisfactionRating  []string `json:"satisfaction_rating,omitempty"`
 	SharingAgreementIds []int `json:"sharing_agreement_ids,omitempty"`
 	FollowupIds         []int `json:"followup_ids,omitempty"`
@@ -33,4 +33,9 @@ type Ticket struct {
 	BrandId             int `json:"brand_id,omitempty"`
 	CreatedAt           string `json:"created_at,omitempty"`
 	UpdatedAt           string `json:"updated_at,omitempty"`
+}
+
+type CustomField struct {
+    ID    int    `json:"id"`
+    Value interface{} `json:"value"`
 }
